@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Debug edcb-notifier",
+            "program": "${workspaceFolder:edcb-notifier}\\.build/debug/edcb-notifier",
+            "args": [],
+            "cwd": "${workspaceFolder:edcb-notifier}",
+            "preLaunchTask": "swift: Build Debug edcb-notifier"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Release edcb-notifier",
+            "program": "${workspaceFolder:edcb-notifier}\\.build/release/edcb-notifier",
+            "args": [],
+            "cwd": "${workspaceFolder:edcb-notifier}",
+            "preLaunchTask": "swift: Build Release edcb-notifier"
+        }
+    ]
+}
