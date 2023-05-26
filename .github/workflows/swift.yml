@@ -19,5 +19,5 @@ jobs:
           tag: 5.8-RELEASE
 
       - uses: actions/checkout@v3
-      - run: swift build
+      - run: swift build -Xswiftc -parse-as-library
 #       - run: swift test
