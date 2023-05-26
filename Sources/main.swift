@@ -28,13 +28,16 @@ struct EDCBNotifier: ParsableCommand {
     @Argument(help: "Webhook URL")
     var url: String
 
+    @Option(help: "timeout seconds")
+    var timeout: Int = 10
+
     mutating func run() throws {
         // urlにpostして、結果を表示する
         // ただし, タイムアウトするかレスポンスが返るまで待機
         let semaphore = DispatchSemaphore(value: 0)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
-        request.timeoutInterval = 10
+        request.timeoutInterval = TimeInterval(timeout)
 
         // EDCBから渡される環境変数を取得
         let edcbenv = EDCBEnv()
